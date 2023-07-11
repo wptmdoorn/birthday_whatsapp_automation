@@ -13,3 +13,7 @@ def run_job():
     main()
 
 schedule.every().day.at("08:00").do(run_job)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
