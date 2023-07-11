@@ -88,10 +88,12 @@ def send_message(contact: pd.Series) -> None:
     # wait for message to be sent
     time.sleep(6)
 
-
-if __name__ == "__main__":
+def main():
     birthdays: pd.DataFrame = get_birthdays()
 
     for index, person in birthdays.iterrows():
         print(f"Sending message to {person['firstname']}")
         send_message(person)
+
+if __name__ == "__main__":
+    main()
