@@ -4,7 +4,7 @@ import random
 
 def run_job():
     # we introduce a random delay of 1 to 120 minutes to avoid overloading the server
-    _sleep = random
+    _sleep = random.randint(60, 7200)
     print(f'Sleeping for {_sleep} seconds')
     time.sleep(_sleep)
 
@@ -16,4 +16,4 @@ schedule.every().day.at("08:00").do(run_job)
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(10)
